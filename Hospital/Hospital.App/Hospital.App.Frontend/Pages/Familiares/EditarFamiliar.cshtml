@@ -1,0 +1,50 @@
+﻿@page
+@model Hospital.App.Frontend.Pages.EditarFamiliarModel
+@{
+    ViewData["Title"] = "Actualizar Información de Familiares";
+}
+<h1>Editar Familiar</h1>
+<h3> @ViewData["Error"]</h3>
+<form method="POST">
+    <div asp-validation-summary="ModelOnly" class="text-danger" ></div>
+    <input type="hidden" asp-for="familiar.Id" />
+    <div class="mb-3">
+        <label asp-for="familiar.Nombre" class="form-label">Nombres</label>
+        <input type="text" asp-for="familiar.Nombre" class="form-control" id="Nombre">
+        <span asp-validation-for="familiar.Nombre" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="familiar.Apellidos" class="form-label">Apellidos</label>
+        <input type="text" asp-for="familiar.Apellidos" class="form-control" id="txtApellidos">
+        <span asp-validation-for="familiar.Apellidos" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="familiar.NumeroTelefono" class="form-label">Numero de Telefono</label>
+        <input type="text" asp-for="familiar.NumeroTelefono" class="form-control" id="txtNumeroTelefono">
+        <span asp-validation-for="familiar.NumeroTelefono" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="familiar.Genero" class="form-label">Genero</label>
+        <input type="text" asp-for="familiar.Genero" class="form-control" id="txtGenero">
+        <span asp-validation-for="familiar.Genero" class="text-danger"></span>
+    </div>
+<!-- Atributos de familiar únicamente-->
+
+    <div class="mb-3">
+        <label asp-for="familiar.Parentesco" class="form-label">Parentesco</label>
+        <input type="text" asp-for="familiar.Parentesco" class="form-control" id="txtParentesco">
+        <span asp-validation-for="familiar.Parentesco" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="familiar.Correo" class="form-label">Correo</label>
+        <input type="text" asp-for="familiar.Correo" class="form-control" id="txtCorreo">
+        <span asp-validation-for="familiar.Correo" class="text-danger"></span>
+    </div>
+    <div class="col-8 mb-3">
+        <label asp-for="familiar.DireccionFamiliar" class="form-label">Dirección</label>
+        <input type="text" asp-for="familiar.DireccionFamiliar" class="form-control" id="txtDireccionFamiliar">
+        <span asp-validation-for="familiar.DireccionFamiliar" class="text-danger"></span>
+    </div>
+       
+    <button type="submit" class="btn btn-primary">Guardar</button>
+</form>

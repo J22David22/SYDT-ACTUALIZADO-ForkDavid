@@ -1,0 +1,37 @@
+﻿@page
+@model Hospital.App.Frontend.Pages.VerFamiliarModel
+@{
+}
+
+<h1>Información del Familiar</h1>
+<p>
+    <a asp-page="./ListadoFamiliares">Listado de Familiares</a>
+</p>
+
+<form method="POST">
+    <div class="card mb-3" style="max-width: 540px;">
+        <div class="row g-0">
+            <div class="col-md-4">
+                <img src="..." class="img-fluid rounded-start" alt="...">
+            </div>
+            <div class="col-md-8">
+                <div class="card-body">
+                    <h5 class="card-title">
+                        @* <label for="familiar">@Model.familiar.Nombre</label> *@
+                        <label asp-for="familiar.Nombre" class="control-label"></label>
+                        <input type="text" asp-for="familiar.Nombre" class="form-control" readonly/>
+                    </h5>
+                    <p class="card-text">Apellidos: @Model.familiar.Apellidos</p>
+                    <p class="card-text">Numero de Telefono: @Model.familiar.NumeroTelefono</p>
+                    <p class="card-text">Género: @Model.familiar.Genero</p>
+                    <p class="card-text">Parentesco: @Model.familiar.Parentesco</p>
+                    <p class="card-text">Correo: @Model.familiar.Correo</p>
+                    <p class="card-text">Dirección: @Model.familiar.DireccionFamiliar</p>
+                    
+                </div>
+                <a  asp-page="./EditarMFamiliar" asp-route-id="@Model.familiar.Id" >Editar datos</a>
+            </div>
+        </div>
+    </div>
+</form>
+

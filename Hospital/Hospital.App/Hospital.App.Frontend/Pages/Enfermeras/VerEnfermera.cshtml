@@ -1,0 +1,33 @@
+﻿@page
+@model Hospital.App.Frontend.Pages.VerEnfermeraModel
+@{
+}
+
+<h1>Información del enfermera</h1>
+<p>
+    <a asp-page="./ListadoEnfermeras">Listado de Enfermeras</a>
+</p>
+
+<form method="POST">
+    <div class="card mb-3" style="max-width: 540px;">
+        <div class="row g-0">
+            <div class="col-md-4">
+                <img src="..." class="img-fluid rounded-start" alt="...">
+            </div>
+            <div class="col-md-8">
+                <div class="card-body">
+                    <h5 class="card-title">
+                        @* <label for="enfermera">@Model.enfermera.Nombre</label> *@
+                        <label asp-for="enfermera.Nombre" class="control-label"></label>
+                        <input type="text" asp-for="enfermera.Nombre" class="form-control" readonly/>
+                    </h5>
+                    <p class="card-text">Apellidos: @Model.enfermera.Apellidos</p>
+                    <p class="card-text">Numero de Telefono: @Model.enfermera.NumeroTelefono</p>
+                    <p class="card-text">Género: @Model.enfermera.Genero</p>
+                    <p class="card-text">Parentesco: @Model.enfermera.TarjetaProfesional</p>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</form>

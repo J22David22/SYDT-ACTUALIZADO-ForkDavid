@@ -1,0 +1,44 @@
+﻿@page
+@model Hospital.App.Frontend.Pages.ListadoAuxiliaresModel
+@{
+    //Codigo C#
+    ViewData["Title"] = "Listado de Auxiliares";
+}
+
+<h1>Listado de Auxiliares de la Aplicacion</h1>
+<hr>
+<a asp-page="./CrearAuxiliar">Crear Auxiliar</a>
+<br>
+<form method="POST">
+    <table class="table table-dark table-striped">
+        <thead>
+            <tr>
+                <th scope="col">Id</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">Apellidos</th>
+                <th scope="col">Numero Telefono</th>
+                <th scope="col">Género</th>
+                <th scope="col">Parentesco </th>
+                <th scope="col">Correo </th>
+                
+                <th scope="col" colspan="5">Opciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var auxiliar in Model.Auxiliares)
+            {
+                <tr>                    
+                    <td scope="row">@auxiliar.Id</td>
+                    <td>@auxiliar.Nombre</td>
+                    <td>@auxiliar.Apellidos</td>
+                    <td>@auxiliar.NumeroTelefono</td>
+                    <td>@auxiliar.Genero</td>
+                    
+                    <td><a asp-page="./EditarAuxiliar" asp-route-id="@auxiliar.Id">Editar</a></td>
+                    <td><a asp-page="./VerAuxiliar" asp-route-id="@auxiliar.Id">Detalle</a></td>
+                    <td><a asp-page="./EliminarAuxiliar" asp-route-id="@auxiliar.Id">Eliminar</a></td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</form>

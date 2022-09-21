@@ -1,0 +1,58 @@
+﻿@page
+@model Hospital.App.Frontend.Pages.ListadoSignosVitalesModel
+@{
+    //Codigo C#
+    ViewData["Title"] = "Listado de SignosVitales";
+    int pacienteId=Model.paciente.Id;
+}
+
+<h1>Listado de SignosVitales de la Aplicacion</h1>
+<hr>
+
+<br>
+
+
+<form method="post" > 
+    <input type="hidden" asp-for="paciente.Id" ></label>
+    <button type="submit" asp-for="paciente.Id" class="btn btn-primary">Crear</button>
+</form> 
+<form method="post">
+    
+    @* <a asp-page="./CrearSignoVital" asp-route-pId="@Model.paciente.Id">Crear SignoVital</a> *@
+    <table class="table table-dark table-striped">
+        <thead>
+            <tr>
+                <th scope="col">Id</th>
+                <th scope="col">Fecha</th>
+                <th scope="col">Signo</th>
+                <th scope="col">Valor</th>
+                <th scope="col">PacienteId</th>
+                
+                <th scope="col" colspan="5">Opciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var siv in Model.SignosVitales)
+            {
+                <tr>                    
+                    <td scope="row">@siv.Id</td>
+                    <td>@siv.FechaHora</td>
+                    <td>@siv.Signo</td>
+                    <td>@siv.Valor</td>
+                    <td>@siv.PacienteId</td>
+                    
+                    <td>
+                        <a type="submit" asp-page="./EditarSignoVital"  asp-route-id="@siv.Id">Editar</a>
+                    </td>
+                    <td>
+                        <a asp-page="./EliminarSignoVital" asp-route-id="@siv.Id">
+                    
+                    Eliminar
+                        </a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    
+</form>

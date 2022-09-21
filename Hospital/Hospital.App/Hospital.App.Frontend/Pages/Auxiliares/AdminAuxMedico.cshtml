@@ -1,0 +1,66 @@
+﻿@page
+@model Hospital.App.Frontend.Pages.Auxiliares.AdminAuxMedicoModel
+@{
+}
+
+<h1>Módulo de Administración - Médicos</h1>
+<hr>
+
+<div>
+    <ul class="nav nav-pills">
+        <li class="nav-item">
+            <a class="nav-link fs-5" aria-current="page" asp-page="/Auxiliares/AdminAuxiliar">Pacientes</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link active fs-5" aria-current="page" href="#">Médicos</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link fs-5" aria-current="page" asp-page="/Auxiliares/AdminAuxFmliar">Familiar Designado</a>
+        </li>
+    </ul>
+</div>
+<div class="mt-3">
+    <a asp-page="/Medicos/CrearMedico" class="btn btn-success btn-md" type="button">Crear Médico</a>
+</div>
+<div class="container mt-3">
+    <div class="row">
+        <div class="col-sm-12 col-md-8 col-lg-8 col-xl-8">
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th class="text-center" scope="col">Id</th>
+                        <th class="text-center" scope="col">Nombre</th>
+                        <th class="text-center" scope="col">Apellidos</th>
+                        <th class="text-center" scope="col">Teléfono</th>
+                        <th class="text-center" scope="col">Genero</th>
+                        <th class="text-center" scope="col" colspan="5">Opciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var medico in Model.Medicos)
+                    {
+                            <tr>
+                                <td scope="row" class="text-center">@medico.Id</td>
+                                <td class="text-center">@medico.Nombre</td>
+                                <td class="text-center">@medico.Apellidos</td>
+                                <td class="text-center">@medico.NumeroTelefono</td>
+                                <td class="text-center">@medico.Genero</td>
+                                <td class="text-center"><a asp-page="/Medicos/EditarMedico" asp-route-id="@medico.Id">Editar</a></td>
+                                <td class="text-center"><a asp-page="/Medicos/VerMedico" asp-route-id="@medico.Id">Detalle</a></td>
+                                <td class="text-center"><a asp-page="/Medicos/EliminarMedico" asp-route-id="@medico.Id">Eliminar</a></td>
+                            </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+        <div class="col-sm-12 col-md-4 col-lg-4 col-xl-4">
+            <div class="carousel slide" id="mainSlider" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="~/img/medicos.jpg" alt="" class="d-block w-100">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

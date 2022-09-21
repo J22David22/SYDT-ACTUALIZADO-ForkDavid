@@ -1,0 +1,28 @@
+﻿@page
+@model Hospital.App.Frontend.Pages.EliminarSignoVitalModel
+@{
+}
+<h2>SignoVital a eliminar</h2>
+<hr>
+<div>
+    <a asp-page="./ListadoSignosVitales">Listado de Signos Vitales</a>
+</div>
+
+<hr>
+<form method="post">
+    <input type="hidden" asp-for="signoVital.Id"/>
+    <div class="card border-success mb-3" style="max-width: 18rem;">
+        <div class="card-header bg-transparent border-success"><label asp-for="signoVital">¿Estás seguro que deseas eliminar a @Model.signoVital.Id ?</label> </div>
+        <div class="card-body text-success">
+            <h5 class="card-title">
+                <label asp-for="signoVital">@Model.signoVital.Id</label>
+            </h5>
+            <hr>
+            <p class="card-text">@Model.signoVital.FechaHora</p>
+            <p class="card-text">@Model.signoVital.Signo</p>
+            <p class="card-text">@Model.signoVital.Valor</p>
+        </div>
+        
+    </div>
+    <input type="submit" value="Eliminar" class="btn btn-primary">
+</form>

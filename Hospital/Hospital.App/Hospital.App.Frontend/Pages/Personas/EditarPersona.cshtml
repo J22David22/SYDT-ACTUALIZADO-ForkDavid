@@ -1,0 +1,32 @@
+﻿@page
+@model Hospital.App.Frontend.Pages.EditarPersonaModel
+@{
+    ViewData["Title"] = "Actualizar Información de Personas";
+}
+<h1>Editar información del Personal</h1>
+<h3>@ViewData["Error"]</h3>
+<form method="POST">
+    <div asp-validation-summary="ModelOnly" class="text-danger" ></div>
+    <input type="hidden" asp-for="persona.Id" />
+    <div class="mb-3">
+        <label asp-for="persona.Nombre" class="form-label">Nombre</label>
+        <input type="text" asp-for="persona.Nombre" class="form-control" id="Nombre">
+        <span asp-validation-for="persona.Nombre" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="persona.Apellidos" class="form-label">Apellidos</label>
+        <input type="text" asp-for="persona.Apellidos" class="form-control" id="txtApellidos">
+        <span asp-validation-for="persona.Apellidos" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="persona.NumeroTelefono" class="form-label">Numero de Telefono</label>
+        <input type="text" asp-for="persona.NumeroTelefono" class="form-control" id="txtNumeroTelefono">
+        <span asp-validation-for="persona.NumeroTelefono" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="persona.Genero" class="form-label">Genero</label>
+        <input type="text" asp-for="persona.Genero" class="form-control" id="txtGenero">
+        <span asp-validation-for="persona.Genero" class="text-danger"></span>
+    </div>
+    <button type="submit" class="btn btn-primary">Guardar</button>
+</form>

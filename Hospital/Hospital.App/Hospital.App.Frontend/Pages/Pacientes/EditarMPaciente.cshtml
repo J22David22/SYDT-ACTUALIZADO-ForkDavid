@@ -1,0 +1,61 @@
+﻿@page
+@model Hospital.App.Frontend.Pages.EditarMPacienteModel
+@{
+    ViewData["Title"] = "Actualizar Información de Pacientes";
+}
+<h1>Editar Paciente</h1>
+<h3> @ViewData["Error"]</h3>
+<form method="POST">
+    <div asp-validation-summary="ModelOnly" class="text-danger" ></div>
+    <input type="hidden" asp-for="paciente.Id" />
+    <div class="mb-3">
+        <label asp-for="paciente.Nombre" class="form-label">Nombres</label>
+        <input type="text" asp-for="paciente.Nombre" class="form-control" id="Nombre" readonly>
+    </div>
+    <div class="mb-3">
+        <label asp-for="paciente.Apellidos" class="form-label">Apellidos</label>
+        <input type="text" asp-for="paciente.Apellidos" class="form-control" id="txtApellidos" readonly>
+        <span asp-validation-for="paciente.Apellidos" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="paciente.NumeroTelefono" class="form-label">Numero de Telefono</label>
+        <input type="text" asp-for="paciente.NumeroTelefono" class="form-control" id="txtNumeroTelefono">
+        <span asp-validation-for="paciente.NumeroTelefono" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="paciente.Genero" class="form-label">Genero</label>
+        <input type="text" asp-for="paciente.Genero" class="form-control" id="txtGenero" readonly>
+        <span asp-validation-for="paciente.Genero" class="text-danger"></span>
+    </div>
+<!-- Atributos de paciente únicamente-->
+
+    <div class="mb-3">
+        <label asp-for="paciente.Direccion" class="form-label">Dirección</label>
+        <input type="text" asp-for="paciente.Direccion" class="form-control" id="txtDireccion">
+        <span asp-validation-for="paciente.Direccion" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="paciente.Latitud" class="form-label">Latitud</label>
+        <input type="text" asp-for="paciente.Latitud" class="form-control" id="txtLatitud" readonly>
+        <span asp-validation-for="paciente.Latitud" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="paciente.Longitud" class="form-label">Longitud </label>
+        <input type="text" asp-for="paciente.Longitud" class="form-control" id="txtLongitud" readonly>
+        <span asp-validation-for="paciente.Longitud" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="paciente.Ciudad" class="form-label">Ciudad</label>
+        <input type="text" asp-for="paciente.Ciudad" class="form-control" id="txtCiudad" readonly>
+        <span asp-validation-for="paciente.Ciudad" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="paciente.FechaNacimiento" class="form-label">Fecha de nacimiento</label>
+        <input type="text" asp-for="paciente.FechaNacimiento" class="form-control" id="txtFechaNacimiento" readonly>
+        <span asp-validation-for="paciente.FechaNacimiento" class="text-danger"></span>
+    </div>
+
+    
+
+    <button type="submit" class="btn btn-primary">Guardar</button>
+</form>

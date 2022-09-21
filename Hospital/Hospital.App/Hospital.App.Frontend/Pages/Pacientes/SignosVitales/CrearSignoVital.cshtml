@@ -1,0 +1,53 @@
+﻿@page
+@model Hospital.App.Frontend.Pages.CrearSignoVitalModel
+@{
+    ViewData["Title"] = "Crear signoVital";
+    int pacienteid=Convert.ToInt32(TempData["pacienteid"]);
+}
+
+<h1>Crear signoVital</h1>
+<h3>@TempData["idpaciente"]</h3>
+<h3> @ViewData["Error"]</h3>
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12 col-md-6 col-lg-6 col-lx-6">
+            <form method="POST">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <input type="hidden" asp-for="@Model.signoVital.Id" />
+                <div class="col-8 mb-3">
+                    <label asp-for="@Model.signoVital.FechaHora" class="form-label">Fecha de toma</label>
+                    <input type="text" asp-for="@Model.signoVital.FechaHora" class="form-control" id="FechaHora">
+                    <span asp-validation-for="@Model.signoVital.FechaHora" class="text-danger"></span>
+                </div>
+                <div class="col-8 mb-3">
+                    <label asp-for="@Model.signoVital.Signo" class="form-label">signoVital</label>
+                    <input type="text" asp-for="@Model.signoVital.Signo" class="form-control" id="txtSigno">
+                    <span asp-validation-for="@Model.signoVital.Signo" class="text-danger"></span>
+                </div>
+                <div class="col-8 mb-3">
+                    <label asp-for="@Model.signoVital.Valor" class="form-label">Valor</label>
+                    <input type="text" asp-for="@Model.signoVital.Valor" class="form-control" id="txtValor">
+                    <span asp-validation-for="@Model.signoVital.Valor" class="text-danger"></span>
+                </div>
+                <div class="col-8 mb-3">
+                    <label asp-for="@pacienteid" class="form-label">PacienteId</label>
+                    <input type="text" asp-for="@pacienteid" class="form-control" id="txtPacienteId" readonly>
+                    <span asp-validation-for="@pacienteid" class="text-danger"></span>
+                </div>
+                
+                
+
+                <button type="submit" class="btn btn-primary">Guardar</button>
+            </form>
+        </div>
+        <div class="col">
+            <div class="carousel slide" id="mainSlider" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="~/img/familiar.jpg" alt="" class="d-block w-100">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

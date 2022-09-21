@@ -1,0 +1,65 @@
+﻿@page
+@model Hospital.App.Frontend.Pages.CrearMedicoModel
+@{
+    ViewData["Title"] = "Crear Medico";
+
+}
+
+<h1>Crear Medico</h1>
+<h3> @ViewData["Error"]</h3>
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12 col-md-6 col-lg-6 col-lx-6">
+            <form method="POST">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="col-8 mb-3">
+                    <label asp-for="medico.Nombre" class="form-label">Nombre</label>
+                    <input type="text" asp-for="medico.Nombre" class="form-control" id="Nombre">
+                    <span asp-validation-for="medico.Nombre" class="text-danger"></span>
+                </div>
+                <div class="col-8 mb-3">
+                    <label asp-for="medico.Apellidos" class="form-label">Apellidos</label>
+                    <input type="text" asp-for="medico.Apellidos" class="form-control" id="txtApellidos">
+                    <span asp-validation-for="medico.Apellidos" class="text-danger"></span>
+                </div>
+                <div class="col-4 mb-3">
+                    <label asp-for="medico.NumeroTelefono" class="form-label">Número de Teléfono</label>
+                    <input type="text" asp-for="medico.NumeroTelefono" class="form-control" id="txtNumeroTelefono">
+                    <span asp-validation-for="medico.NumeroTelefono" class="text-danger"></span>
+                </div>
+                <div class="col-4 mb-3">
+                    <label asp-for="medico.Genero" class="form-label">Genero</label>
+                    <input type="text" asp-for="medico.Genero" class="form-control" id="txtGenero">
+                    <span asp-validation-for="medico.Genero" class="text-danger"></span>
+                </div>
+                <!-- Atributos de medico únicamente-->
+                <div class="col-8 mb-3">
+                    <label asp-for="medico.Especialidad" class="form-label">Especialidad</label>
+                    <input type="text" asp-for="medico.Especialidad" class="form-control" id="txtEspecialidad">
+                    <span asp-validation-for="medico.Especialidad" class="text-danger"></span>
+                </div>
+                <div class="col-4 mb-3">
+                    <label asp-for="medico.Codigo" class="form-label">Codigo</label>
+                    <input type="text" asp-for="medico.Codigo" class="form-control" id="txtCodigo">
+                    <span asp-validation-for="medico.Codigo" class="text-danger"></span>
+                </div>
+                <div class="col-4 mb-3">
+                    <label asp-for="medico.RegistroRethus" class="form-label">RegistroRethus</label>
+                    <input type="text" asp-for="medico.RegistroRethus" class="form-control" id="txtRegistroRethus">
+                    <span asp-validation-for="medico.RegistroRethus" class="text-danger"></span>
+                </div>
+                <button type="submit" class="btn btn-primary">Guardar</button>
+            </form>
+        </div>
+        <div class="col">
+            <div class="carousel slide" id="mainSlider" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="~/img/medico.png" alt="" class="d-block w-100">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

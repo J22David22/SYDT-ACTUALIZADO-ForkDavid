@@ -1,0 +1,39 @@
+﻿@page
+@model Hospital.App.Frontend.Pages.EditarEnfermeraModel
+@{
+    ViewData["Title"] = "Actualizar Información de Enfermeras";
+}
+<h1>Editar Enfermera</h1>
+<h3> @ViewData["Error"]</h3>
+<form method="POST">
+    <div asp-validation-summary="ModelOnly" class="text-danger" ></div>
+    <input type="hidden" asp-for="enfermera.Id" />
+      <div class="mb-3">
+        <label asp-for="enfermera.Nombre" class="form-label">Nombre</label>
+        <input type="text" asp-for="enfermera.Nombre" class="form-control" id="Nombre">
+        <span asp-validation-for="enfermera.Nombre" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="enfermera.Apellidos" class="form-label">Apellidos</label>
+        <input type="text" asp-for="enfermera.Apellidos" class="form-control" id="txtApellidos">
+        <span asp-validation-for="enfermera.Apellidos" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="enfermera.NumeroTelefono" class="form-label">Numero de Telefono</label>
+        <input type="text" asp-for="enfermera.NumeroTelefono" class="form-control" id="txtNumeroTelefono">
+        <span asp-validation-for="enfermera.NumeroTelefono" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="enfermera.Genero" class="form-label">Genero</label>
+        <input type="text" asp-for="enfermera.Genero" class="form-control" id="txtGenero">
+        <span asp-validation-for="enfermera.Genero" class="text-danger"></span>
+    </div>
+<!-- Atributos de enfermera únicamente-->
+    <div class="mb-3">
+        <label asp-for="enfermera.TarjetaProfesional" class="form-label">TarjetaProfesional</label>
+        <input type="text" asp-for="enfermera.TarjetaProfesional" class="form-control" id="txtTarjetaProfesional">
+        <span asp-validation-for="enfermera.TarjetaProfesional" class="text-danger"></span>
+    </div>
+    
+    <button type="submit" class="btn btn-primary">Guardar</button>
+</form>

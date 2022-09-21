@@ -1,0 +1,30 @@
+﻿@page
+@model Hospital.App.Frontend.Pages.VerPersonaModel
+@{
+}
+
+<h1>Información de la Persona</h1>
+<p>
+    <a asp-page="./ListadoPersonas">Listado de Personas</a>
+</p>
+
+<form method="POST">
+    <div class="card mb-3" style="max-width: 540px;">
+        <div class="row g-0">
+            <div class="col-md-4">
+                <img src="..." class="img-fluid rounded-start" alt="...">
+            </div>
+            <div class="col-md-8">
+                <div class="card-body">
+                    <h5 class="card-title">
+                        @* <label for="persona">@Model.Persona.Nombre</label> *@
+                        <label asp-for="Persona.Nombre" class="control-label"></label>
+                        <input type="text" asp-for="Persona.Nombre" class="form-control" readonly/>
+                    </h5>
+                    <p class="card-text">@Model.Persona.Apellidos</p>
+                    <p class="card-text"><small class="text-muted">Numero de Telefono: @Model.Persona.NumeroTelefono</small></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>

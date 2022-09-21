@@ -1,0 +1,28 @@
+﻿@page
+@model Hospital.App.Frontend.Pages.EliminarFamiliarModel
+@{
+}
+<h2>Familiar a eliminar</h2>
+<hr>
+<div>
+    <a asp-page="./ListadoFamiliares">Listado de Familiares</a>
+</div>
+
+<hr>
+<form method="post">
+    <input type="hidden" asp-for="familiar.Id"/>
+    <div class="card border-success mb-3" style="max-width: 18rem;">
+        <div class="card-header bg-transparent border-success"><label asp-for="familiar">¿Estás seguro que deseas eliminar a @Model.familiar.Nombre ?</label> </div>
+        <div class="card-body text-success">
+            <h5 class="card-title">
+                <label asp-for="familiar">@Model.familiar.Nombre</label>
+            </h5>
+            <hr>
+            <p class="card-text">@Model.familiar.Apellidos</p>
+            <p class="card-text">@Model.familiar.NumeroTelefono</p>
+            <p class="card-text">@Model.familiar.Genero</p>
+        </div>
+        
+    </div>
+    <input type="submit" value="Eliminar" class="btn btn-primary">
+</form>

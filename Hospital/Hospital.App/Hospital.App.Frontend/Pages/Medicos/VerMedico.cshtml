@@ -1,0 +1,36 @@
+﻿@page
+@model Hospital.App.Frontend.Pages.VerMedicoModel
+@{
+}
+
+<h1>Información del Medico</h1>
+<p>
+    <a asp-page="./ListadoMedicos">Listado de Medicos</a>
+</p>
+
+<form method="POST">
+    <div class="card mb-3" style="max-width: 540px;">
+        <div class="row g-0">
+            <div class="col-md-4">
+                <img src="..." class="img-fluid rounded-start" alt="...">
+            </div>
+            <div class="col-md-8">
+                <div class="card-body">
+                    <h5 class="card-title">
+                        @* <label for="familiar">@Model.familiar.Nombre</label> *@
+                        <label asp-for="medico.Nombre" class="control-label"></label>
+                        <input type="text" asp-for="medico.Nombre" class="form-control" readonly/>
+                    </h5>
+                    <p class="card-text">Apellidos: @Model.medico.Apellidos</p>
+                    <p class="card-text">Numero de Telefono: @Model.medico.NumeroTelefono</p>
+                    <p class="card-text">Género: @Model.medico.Genero</p>
+                    <p class="card-text">Parentesco: @Model.medico.Especialidad</p>
+                    <p class="card-text">Correo: @Model.medico.Codigo</p>
+                    <p class="card-text">Parentesco: @Model.medico.RegistroRethus</p>
+                    <p class="card-text"><a asp-page="./ListadoPacientesM" asp-route-id="@Model.medico.Id">Pacientes</a></p>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</form>

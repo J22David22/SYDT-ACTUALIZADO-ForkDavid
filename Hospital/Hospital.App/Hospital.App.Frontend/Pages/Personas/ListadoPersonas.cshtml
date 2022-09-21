@@ -1,0 +1,40 @@
+﻿@page
+@model Hospital.App.Frontend.Pages.ListadoPersonasModel
+@{
+    //Codigo C#
+    ViewData["Title"] = "Listado de Personas";
+}
+
+<h1>Listado de Personas de la Aplicacion</h1>
+<hr>
+<a asp-page="./CrearPersona">Crear Persona</a>
+<br>
+<form method="POST">
+    <table class="table table-dark table-striped">
+        <thead>
+            <tr>
+                <th scope="col">Id</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">Apellidos</th>
+                <th scope="col">Numero Telefono</th>
+                <th scope="col">Género</th>
+                <th scope="col" colspan="5">Opciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var persona in Model.Personas)
+            {
+                <tr>                    
+                    <td scope="row">@persona.Id</td>
+                    <td>@persona.Nombre</td>
+                    <td>@persona.Apellidos</td>
+                    <td>@persona.NumeroTelefono</td>
+                    <td>@persona.Genero</td>
+                    <td><a asp-page="./EditarPersona" asp-route-id="@persona.Id">Editar</a></td>
+                    <td><a asp-page="./VerPersona" asp-route-id="@persona.Id">Detalle</a></td>
+                    <td><a asp-page="./EliminarPersona" asp-route-id="@persona.Id">Eliminar</a></td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</form>

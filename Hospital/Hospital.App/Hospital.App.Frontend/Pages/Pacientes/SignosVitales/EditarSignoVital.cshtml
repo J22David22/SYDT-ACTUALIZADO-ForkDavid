@@ -1,0 +1,33 @@
+﻿@page
+@model Hospital.App.Frontend.Pages.EditarSignoVitalModel
+@{
+    ViewData["Title"] = "Actualizar Información de Signos Vitales";
+}
+<h1>Editar SignoVital</h1>
+<h3> @ViewData["Error"]</h3>
+<form method="POST">
+    <div asp-validation-summary="ModelOnly" class="text-danger" ></div>
+    <input type="hidden" asp-for="signoVital.Id" />
+    <div class="col-8 mb-3">
+        <label asp-for="signoVital.FechaHora" class="form-label">Fecha de toma</label>
+        <input type="text" asp-for="signoVital.FechaHora" class="form-control" id="FechaHora">
+        <span asp-validation-for="signoVital.FechaHora" class="text-danger"></span>
+    </div>
+    <div class="col-8 mb-3">
+        <label asp-for="signoVital.Signo" class="form-label">signoVital</label>
+        <input type="text" asp-for="signoVital.Signo" class="form-control" id="txtsignoVital">
+        <span asp-validation-for="signoVital.Signo" class="text-danger"></span>
+    </div>
+    <div class="col-8 mb-3">
+        <label asp-for="signoVital.Valor" class="form-label">Valor</label>
+        <input type="text" asp-for="signoVital.Valor" class="form-control" id="txtValor">
+        <span asp-validation-for="signoVital.Valor" class="text-danger"></span>
+    </div>
+    <div class="col-8 mb-3">
+        <label asp-for="signoVital.PacienteId" class="form-label">PacienteId</label>
+        <input type="text" asp-for="signoVital.PacienteId" class="form-control" id="txtPacienteId" readonly>
+        <span asp-validation-for="signoVital.PacienteId" class="text-danger"></span>
+    </div>
+       
+    <button type="submit" class="btn btn-primary">Guardar</button>
+</form>

@@ -1,0 +1,49 @@
+﻿@page
+@model Hospital.App.Frontend.Pages.ListadoMedicosModel
+@{
+    //Codigo C#
+    ViewData["Title"] = "Listado de Medicos";
+}
+
+<h1>Listado de Medicos de la Aplicacion</h1>
+<hr>
+<a asp-page="./CrearMedico">Crear Medico</a>
+<br>
+<form method="POST">
+    <table class="table table-dark table-striped">
+        <thead>
+            <tr>
+                <th scope="col">Id</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">Apellidos</th>
+                <th scope="col">Numero Telefono</th>
+                <th scope="col">Género</th>
+                <th scope="col">Especialidad </th>
+                <th scope="col">Codigo </th>
+                <th scope="col">RegistroRethus </th>
+                <th scope="col">Lista Pacientes </th>
+                <th scope="col" colspan="5">Opciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var medico in Model.Medicos)
+            {
+                <tr>                    
+                    <td scope="row">@medico.Id</td>
+                    <td>@medico.Nombre</td>
+                    <td>@medico.Apellidos</td>
+                    <td>@medico.NumeroTelefono</td>
+                    <td>@medico.Genero</td>
+                    <td>@medico.Especialidad</td>
+                    <td>@medico.Codigo</td>
+                    <td>@medico.RegistroRethus</td>
+                    
+                    <td><a asp-page="./ListadoPacientesM" asp-route-id="@medico.Id">Pacientes</a></td>
+                    <td><a asp-page="./EditarMedico" asp-route-id="@medico.Id">Editar</a></td>
+                    <td><a asp-page="./VerMedico" asp-route-id="@medico.Id">Detalle</a></td>
+                    <td><a asp-page="./EliminarMedico" asp-route-id="@medico.Id">Eliminar</a></td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</form>

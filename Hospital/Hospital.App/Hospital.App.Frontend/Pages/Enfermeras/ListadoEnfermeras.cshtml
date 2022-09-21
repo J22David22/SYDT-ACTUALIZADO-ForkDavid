@@ -1,0 +1,45 @@
+﻿@page
+@model Hospital.App.Frontend.Pages.ListadoEnfermerasModel
+@{
+    //Codigo C#
+    ViewData["Title"] = "Listado de Enfermeras";
+}
+
+<h1>Listado de Enfermeras de la Aplicacion</h1>
+<hr>
+<a asp-page="./CrearEnfermera">Crear Enfermera</a>
+<br>
+<form method="POST">
+    <table class="table table-dark table-striped">
+        <thead>
+            <tr>
+                <th scope="col">Id</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">Apellidos</th>
+                <th scope="col">Numero Telefono</th>
+                <th scope="col">Género</th>
+                <th scope="col">TarjetaProfesional </th>
+                
+                <th scope="col" colspan="5">Opciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var enfermera in Model.Enfermeras)
+            {
+                <tr>                    
+                    <td scope="row">@enfermera.Id</td>
+                    <td>@enfermera.Nombre</td>
+                    <td>@enfermera.Apellidos</td>
+                    <td>@enfermera.NumeroTelefono</td>
+                    <td>@enfermera.Genero</td>
+                    <td>@enfermera.TarjetaProfesional</td>
+                    
+                    
+                    <td><a asp-page="./EditarEnfermera" asp-route-id="@enfermera.Id">Editar</a></td>
+                    <td><a asp-page="./VerEnfermera" asp-route-id="@enfermera.Id">Detalle</a></td>
+                    <td><a asp-page="./EliminarEnfermera" asp-route-id="@enfermera.Id">Eliminar</a></td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</form>

@@ -1,0 +1,28 @@
+﻿@page
+@model Hospital.App.Frontend.Pages.EliminarPacienteModel
+@{
+}
+<h2>Paciente a eliminar</h2>
+<hr>
+<div>
+    <a asp-page="./ListadoPacientes">Listado de Pacientes</a>
+</div>
+
+<hr>
+<form method="post">
+    <input type="hidden" asp-for="paciente.Id"/>
+    <div class="card border-success mb-3" style="max-width: 18rem;">
+        <div class="card-header bg-transparent border-success"><label asp-for="paciente">¿Estás seguro que deseas eliminar a @Model.paciente.Nombre ?</label> </div>
+        <div class="card-body text-success">
+            <h5 class="card-title">
+                <label asp-for="paciente">@Model.paciente.Nombre</label>
+            </h5>
+            <hr>
+            <p class="card-text">@Model.paciente.Apellidos</p>
+            <p class="card-text">@Model.paciente.NumeroTelefono</p>
+            <p class="card-text">@Model.paciente.Genero</p>
+        </div>
+        
+    </div>
+    <input type="submit" value="Eliminar" class="btn btn-primary">
+</form>

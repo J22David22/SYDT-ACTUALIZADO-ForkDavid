@@ -1,0 +1,55 @@
+﻿@page
+@model Hospital.App.Frontend.Pages.ListadoPacientesModel
+@{
+    //Codigo C#
+    ViewData["Title"] = "Listado de Pacientes";
+}
+
+<h1>Listado de Pacientes de la Aplicacion</h1>
+<hr>
+<a asp-page="./CrearPaciente">Crear Paciente</a>
+<br>
+<form method="POST">
+    <table class="table table-dark table-striped">
+        <thead>
+            <tr>
+                <th scope="col">Id</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">Apellidos</th>
+                <th scope="col">Numero Telefono</th>
+                <th scope="col">Género</th>
+                <th scope="col">Dirección </th>
+                <th scope="col">Latitud </th>
+                <th scope="col">Longitud </th>
+                <th scope="col">Ciudad </th>
+                <th scope="col">Fecha de nacimiento</th>
+                
+                <th scope="col" colspan="5">Opciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var paciente in Model.Pacientes)
+            {
+                <tr>                    
+                    <td scope="row">@paciente.Id</td>
+                    <td>@paciente.Nombre</td>
+                    <td>@paciente.Apellidos</td>
+                    <td>@paciente.NumeroTelefono</td>
+                    <td>@paciente.Genero</td>
+                    <td>@paciente.Direccion</td>
+                    <td>@paciente.Latitud</td>
+                    <td>@paciente.Longitud</td>
+                    <td>@paciente.Ciudad</td>
+                    <td>@paciente.FechaNacimiento</td>
+                    
+                    
+                    <td><a asp-page="./EditarPaciente" asp-route-id="@paciente.Id">Editar</a></td>
+                    <td><a asp-page="./VerPaciente" asp-route-id="@paciente.Id">Detalle</a></td>
+                    <td><a asp-page="./EliminarPaciente" asp-route-id="@paciente.Id">Eliminar</a></td>
+                    <td><a asp-page="/ListadoSignosVitales" asp-route-id="@paciente.Id">Signos Vitales</a></td>
+                   
+                </tr>
+            }
+        </tbody>
+    </table>
+</form>

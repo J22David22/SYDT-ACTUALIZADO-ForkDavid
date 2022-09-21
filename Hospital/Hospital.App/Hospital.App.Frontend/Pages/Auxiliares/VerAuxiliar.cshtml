@@ -1,0 +1,33 @@
+﻿@page
+@model Hospital.App.Frontend.Pages.VerAuxiliarModel
+@{
+}
+
+<h1>Información del Auxiliar</h1>
+<p>
+    <a asp-page="/Auxiliares/AdminAuxiliar">Ir al menú de Auxiliares</a>
+</p>
+
+<form method="POST">
+    <div class="card mb-3" style="max-width: 540px;">
+        <div class="row g-0">
+            <div class="col-md-4">
+                <img src="..." class="img-fluid rounded-start" alt="...">
+            </div>
+            <div class="col-md-8">
+                <div class="card-body">
+                    <h5 class="card-title">
+                        @* <label for="auxiliar">@Model.auxiliar.Nombre</label> *@
+                        <label asp-for="auxiliar.Nombre" class="control-label"></label>
+                        <input type="text" asp-for="auxiliar.Nombre" class="form-control" readonly/>
+                    </h5>
+                    <p class="card-text">Apellidos: @Model.auxiliar.Apellidos</p>
+                    <p class="card-text">Numero de Telefono: @Model.auxiliar.NumeroTelefono</p>
+                    <p class="card-text">Género: @Model.auxiliar.Genero</p>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+
