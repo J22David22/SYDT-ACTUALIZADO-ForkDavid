@@ -36,12 +36,15 @@ namespace Hospital.App.Frontend.Pages
             Console.WriteLine("idlistado:"+paciente.Id);
             SignosVitales = _repositorioSignoVital.GetAllSignosVitales();
         }
-        public ActionResult OnPost()
+        public ActionResult OnPost(DateTime fechaInf, DateTime fechaSup, int id)
         {
             TempData["idpaciente"]=paciente.Id;
             Console.WriteLine("tempeditar:"+TempData["idpaciente"]);
             Console.WriteLine("fechainf: "+fechaInf);
-            return RedirectToPage("./CrearSignoVital");
+            Console.WriteLine("fechasup: "+fechaSup);
+            Console.WriteLine("idpost: "+id);
+            string str=TempData["idpaciente"].ToString();
+            return Redirect("/Pacientes/SignosVitales/ListadoSignosVitales?id="+str);
         }
         
     }
