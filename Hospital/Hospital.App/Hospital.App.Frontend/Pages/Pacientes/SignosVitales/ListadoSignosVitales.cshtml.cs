@@ -23,6 +23,8 @@ namespace Hospital.App.Frontend.Pages
         public SignoVital signoVital {get;set;}
         [BindProperty]
         public Paciente paciente {get; set;}
+        public DateTime fechaInf {get;set;}
+        public DateTime fechaSup {get;set;}
 
         //Constructor
         public ListadoSignosVitalesModel()
@@ -38,6 +40,7 @@ namespace Hospital.App.Frontend.Pages
         {
             TempData["idpaciente"]=paciente.Id;
             Console.WriteLine("tempeditar:"+TempData["idpaciente"]);
+            Console.WriteLine("fechainf: "+fechaInf);
             return RedirectToPage("./CrearSignoVital");
         }
         

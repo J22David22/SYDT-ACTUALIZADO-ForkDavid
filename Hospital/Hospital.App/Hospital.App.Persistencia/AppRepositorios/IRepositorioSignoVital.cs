@@ -6,6 +6,7 @@ namespace Hospital.App.Persistencia
     public interface IRepositorioSignoVital
     {
         IEnumerable <SignoVital> GetAllSignosVitales();
+        IEnumerable <SignoVital> GetSignosVitalesXFecha(DateTime fechaInf, DateTime fechaSup);
         
         SignoVital AddSignoVital (SignoVital signoVital);
 
