@@ -30,15 +30,32 @@ namespace Hospital.App.Frontend.Pages
         public ListadoSignosVitalesModel()
         {}
 
-        public void OnGet(int id)
+        public void OnGet( int id)
         {
+            fechaInf=new DateTime(0022, 01, 01);
+            fechaSup = DateTime.Now;
             paciente=_repositorioPaciente.GetPaciente(id);
             Console.WriteLine("idlistado:"+paciente.Id);
-            SignosVitales = _repositorioSignoVital.GetAllSignosVitales();
+            fechaInf=Convert.ToDateTime(TempData["fechaInf"]);
+            fechaSup=Convert.ToDateTime(TempData["fechaSup"]);
+            if (fechaInf == new DateTime(0001, 01, 01))
+            {
+                fechaInf = new DateTime(0001, 01, 01);
+            }
+            if (fechaSup == new DateTime(0001, 01, 01))
+            {
+                fechaSup = DateTime.Now;
+            }
+            SignosVitales = _repositorioSignoVital.GetSignosVitalesXFecha(fechaInf, fechaSup);
+            Console.WriteLine("fechainf: "+TempData["fechaInf"]);
+            Console.WriteLine("fechasup: "+TempData["fechaSup"]);
+
         }
         public ActionResult OnPost(DateTime fechaInf, DateTime fechaSup, int id)
         {
             TempData["idpaciente"]=paciente.Id;
+            TempData["fechaInf"]=fechaInf;
+            TempData["fechaSup"]=fechaSup;
             Console.WriteLine("tempeditar:"+TempData["idpaciente"]);
             Console.WriteLine("fechainf: "+fechaInf);
             Console.WriteLine("fechasup: "+fechaSup);
