@@ -34,7 +34,7 @@
 
 
 <form >
-    
+    @{TempData["idpaciente"]=@Model.paciente.Id;}
     @* <a asp-page="./CrearSignoVital" asp-route-pId="@Model.paciente.Id">Crear SignoVital</a> *@
     <table class="table table-dark table-striped">
         <thead>

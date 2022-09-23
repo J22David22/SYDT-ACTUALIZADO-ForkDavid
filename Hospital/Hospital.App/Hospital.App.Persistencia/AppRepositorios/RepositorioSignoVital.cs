@@ -47,9 +47,9 @@ namespace Hospital.App.Persistencia
         {
             return _appContext.SignosVitales;
         }
-        public IEnumerable<SignoVital> GetSignosVitalesXFecha(DateTime fechaInf, DateTime fechaSup)
+        public IEnumerable<SignoVital> GetSignosVitalesXFecha(DateTime fechaInf, DateTime fechaSup, int idp)
         {
-            return _appContext.SignosVitales.Where(s => s.FechaHora >= fechaInf & s.FechaHora <= fechaSup);
+            return _appContext.SignosVitales.Where(s => s.FechaHora >= fechaInf & s.FechaHora <= fechaSup & s.PacienteId==idp);
         }
         public SignoVital UpdateSignoVital(SignoVital signoVital)
         {

@@ -46,7 +46,7 @@ namespace Hospital.App.Frontend.Pages
             {
                 fechaSup = DateTime.Now;
             }
-            SignosVitales = _repositorioSignoVital.GetSignosVitalesXFecha(fechaInf, fechaSup);
+            SignosVitales = _repositorioSignoVital.GetSignosVitalesXFecha(fechaInf, fechaSup, paciente.Id);
             Console.WriteLine("fechainf: "+TempData["fechaInf"]);
             Console.WriteLine("fechasup: "+TempData["fechaSup"]);
 
