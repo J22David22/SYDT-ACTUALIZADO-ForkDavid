@@ -40,6 +40,7 @@
                     
                     <td><a asp-page="./EditarPaciente" asp-route-id="@paciente.Id">Editar</a></td>
                     <td><a asp-page="./VerPaciente" asp-route-id="@paciente.Id">Detalle</a></td>
+                    <td><a asp-page="../Pacientes/HistoriasClinicas/ListadoHistorias" asp-route-id="@paciente.Id">Listado Historias</a></td>
                 </tr>
             }
         </tbody>
