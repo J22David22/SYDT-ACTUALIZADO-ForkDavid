@@ -6,6 +6,7 @@
 }
 
 <h1>Listado de PacientesM de la Aplicacion</h1>
+<h2>Medico @Model.medico.Nombre @Model.medico.Apellidos</h2>
 <hr>
 
 <br>
@@ -38,7 +39,7 @@
                     <td>@paciente.Latitud</td>
                     <td>@paciente.MedicoId</td>
                     
-                    <td><a asp-page="./EditarPaciente" asp-route-id="@paciente.Id">Editar</a></td>
+                    <td><a asp-page="../Pacientes/EditarPaciente" asp-route-id="@paciente.Id">Editar</a></td>
                     <td><a asp-page="./VerPaciente" asp-route-id="@paciente.Id">Detalle</a></td>
                     <td><a asp-page="../Pacientes/HistoriasClinicas/ListadoHistorias" asp-route-id="@paciente.Id">Listado Historias</a></td>
                 </tr>
