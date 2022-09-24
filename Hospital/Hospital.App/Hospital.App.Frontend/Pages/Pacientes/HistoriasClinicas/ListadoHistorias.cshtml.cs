@@ -31,7 +31,7 @@ namespace Hospital.App.Frontend.Pages
                 
                 Persona= this._repoPersona.GetPersona(id);
                 Paciente= this._repoPaciente.GetPaciente(id);
-                
+                HistoriasClinicas = this._repoHistoria.GetHistoriaXPaciente(id);
             }
         }
     }
