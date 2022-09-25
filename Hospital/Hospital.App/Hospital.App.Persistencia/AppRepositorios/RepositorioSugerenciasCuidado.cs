@@ -54,7 +54,7 @@ namespace Hospital.App.Persistencia
             var sugerenciasCuidadoEncontrado = _appContext.SugerenciasCuidados.FirstOrDefault(s => s.Id == sugerenciasCuidado.Id);
             if (sugerenciasCuidadoEncontrado != null)
             {
-                sugerenciasCuidadoEncontrado.FechaHoraSug = sugerenciasCuidado.FechaHoraSug;
+                sugerenciasCuidadoEncontrado.FechaHora = sugerenciasCuidado.FechaHora;
                 sugerenciasCuidadoEncontrado.Descripcion = sugerenciasCuidado.Descripcion;
                 //sugerenciasCuidadoEncontrado.HistoriaClinicaId = sugerenciasCuidado.HistoriaClinicaId;
                 

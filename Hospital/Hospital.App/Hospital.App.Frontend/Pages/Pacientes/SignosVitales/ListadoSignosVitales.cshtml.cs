@@ -16,6 +16,7 @@ namespace Hospital.App.Frontend.Pages
         // Conexión a la BDs
         private  IRepositorioSignoVital _repositorioSignoVital = new RepositorioSignoVital( new Hospital.App.Persistencia.AppContext());
         private  IRepositorioPaciente _repositorioPaciente = new RepositorioPaciente( new Hospital.App.Persistencia.AppContext());
+         private IRepositorioPersona _repoPersona = new RepositorioPersona (new Hospital.App.Persistencia.AppContext());
 
         // Declaro una variable para la lista de SignoVitals
         public IEnumerable<SignoVital> SignosVitales;
@@ -23,6 +24,8 @@ namespace Hospital.App.Frontend.Pages
         public SignoVital signoVital {get;set;}
         [BindProperty]
         public Paciente paciente {get; set;}
+        [BindProperty]
+        public Persona Persona {get;set;}
 
         //Constructor
         public ListadoSignosVitalesModel()
@@ -31,6 +34,7 @@ namespace Hospital.App.Frontend.Pages
         public void OnGet(int id)
         {
             paciente=_repositorioPaciente.GetPaciente(id);
+            Persona= _repoPersona.GetPersona(id);
             Console.WriteLine("idlistado:"+paciente.Id);
             SignosVitales = _repositorioSignoVital.GetAllSignosVitales();
         }
