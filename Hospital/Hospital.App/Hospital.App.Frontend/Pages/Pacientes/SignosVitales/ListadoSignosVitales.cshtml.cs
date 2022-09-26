@@ -16,6 +16,7 @@ namespace Hospital.App.Frontend.Pages
         // Conexión a la BDs
         private  IRepositorioSignoVital _repositorioSignoVital = new RepositorioSignoVital( new Hospital.App.Persistencia.AppContext());
         private  IRepositorioPaciente _repositorioPaciente = new RepositorioPaciente( new Hospital.App.Persistencia.AppContext());
+         private IRepositorioPersona _repoPersona = new RepositorioPersona (new Hospital.App.Persistencia.AppContext());
 
         // Declaro una variable para la lista de SignoVitals
         public IEnumerable<SignoVital> SignosVitales;
@@ -23,8 +24,9 @@ namespace Hospital.App.Frontend.Pages
         public SignoVital signoVital {get;set;}
         [BindProperty]
         public Paciente paciente {get; set;}
-        public DateTime fechaInf {get;set;}
-        public DateTime fechaSup {get;set;}
+
+        [BindProperty]
+        public Persona Persona {get;set;}
 
         //Constructor
         public ListadoSignosVitalesModel()
@@ -35,6 +37,7 @@ namespace Hospital.App.Frontend.Pages
             fechaInf=new DateTime(0022, 01, 01);
             fechaSup = DateTime.Now;
             paciente=_repositorioPaciente.GetPaciente(id);
+            Persona= _repoPersona.GetPersona(id);
             Console.WriteLine("idlistado:"+paciente.Id);
             fechaInf=Convert.ToDateTime(TempData["fechaInf"]);
             fechaSup=Convert.ToDateTime(TempData["fechaSup"]);
