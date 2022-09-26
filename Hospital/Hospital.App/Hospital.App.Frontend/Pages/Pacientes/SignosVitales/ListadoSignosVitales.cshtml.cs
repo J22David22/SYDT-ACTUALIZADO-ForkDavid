@@ -25,6 +25,8 @@ namespace Hospital.App.Frontend.Pages
         [BindProperty]
         public Paciente paciente {get; set;}
 
+        public DateTime fechaInf{ get; set; }
+        public DateTime fechaSup{ get; set; }
         [BindProperty]
         public Persona Persona {get;set;}
 
