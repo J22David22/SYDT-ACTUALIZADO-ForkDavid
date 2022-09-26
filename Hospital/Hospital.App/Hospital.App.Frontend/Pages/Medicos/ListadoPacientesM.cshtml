@@ -39,10 +39,16 @@
                     <td>@paciente.Latitud</td>
                     <td>@paciente.MedicoId</td>
                     
+
+                    
+                    <!--<td><a asp-page="../Pacientes/VerPaciente" asp-route-id="@paciente.Id">Detalle</a></td>
+                    <td><a  class="btn btn-primary" asp-page="/Pacientes/SignoSVitales/ListadoSignosVItales" asp-route-id="@paciente.Id" >Signos Vitales</a></td> -->
+
                     <td><a asp-page="../Pacientes/EditarPaciente" asp-route-id="@paciente.Id">Editar</a></td>
                     <td><a asp-page="./VerPaciente" asp-route-id="@paciente.Id">Detalle</a></td>
                     <td><a asp-page="../Pacientes/HistoriasClinicas/ListadoHistorias" asp-route-id="@paciente.Id">Listado Historias</a></td>
                     <td><a asp-page="../Pacientes/SignosVitales/ListadoSignosVitales" asp-route-id="@paciente.Id">Listado Signos Vitales</a></td>
+
                 </tr>
             }
         </tbody>
