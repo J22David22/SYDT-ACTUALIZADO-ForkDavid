@@ -12,7 +12,7 @@ public class HistoriaClinica
     public string? Entorno {get;set;}
     public int PacienteId {get; set;}
     public int MedicoId {get; set;}
-    //public SugerenciasCuidado SugerenciasCuidado {get;set;}
+    public List<SugerenciasCuidado> SugerenciasCuidado {get;set;}
     
 
 }
